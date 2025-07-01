@@ -4,6 +4,12 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 
+// Cấu hình CORS
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://frontend-jade-nine-53.vercel.app/'],
+    credentials: true
+}));
+
 dotenv.config();
 connectDB();
 
